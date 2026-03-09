@@ -2406,7 +2406,8 @@ module.exports = naze = async (naze, m, msg, store) => {
 				if (!isLimit) return m.reply(mess.limit)
 				if (!text && (!m.quoted || !m.quoted.text)) return m.reply(`Kirim/reply pesan *${prefix + command}* Teksnya`)
 				m.react('⏳')
-				let res = await fetchApi('/create/iqc', { text }, { buffer: true });
+				let queryText = text ? text : m.quoted.text;
+				let res = await fetchApi('/create/iqc', { text: queryText }, { buffer: true });
 				await m.reply({ image: res, caption: mess.done })
 				setLimit(m, db)
 			}
@@ -2469,7 +2470,8 @@ module.exports = naze = async (naze, m, msg, store) => {
 			case 'brat': {
 				if (!isLimit) return m.reply(mess.limit)
 				if (!text && (!m.quoted || !m.quoted.text)) return m.reply(`Kirim/reply pesan *${prefix + command}* Teksnya`)
-				let res = await fetchApi('/create/brat', { text }, { buffer: true });
+				let queryText = text ? text : m.quoted.text;
+				let res = await fetchApi('/create/brat', { text: queryText }, { buffer: true });
 				await naze.sendAsSticker(m.chat, res, m)
 				setLimit(m, db)
 			}
@@ -4550,4 +4552,5 @@ fs.watchFile(file, () => {
 	console.log(chalk.yellowBright(`[UPDATE] ${__filename}`))
 	delete require.cache[file]
 	require(file)
+
 });
