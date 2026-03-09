@@ -1248,9 +1248,9 @@ module.exports = naze = async (naze, m, msg, store) => {
 				});
 			}
 			break
-			case 'deletesampah': case 'delsampah': {
+			case 'deletesampah': case 'delsampah': case 'deletetemp': case 'deltemp': {
 				if (!isCreator) return m.reply(mess.owner)
-				fs.readdir('./database/sampah', async function (err, files) {
+				fs.readdir('./database/temp', async function (err, files) {
 					if (err) {
 						console.error('Unable to scan directory: ' + err);
 						return m.reply('Unable to scan directory: ' + err);
@@ -4554,3 +4554,4 @@ fs.watchFile(file, () => {
 	require(file)
 
 });
+
