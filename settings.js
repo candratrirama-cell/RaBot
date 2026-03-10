@@ -2,16 +2,16 @@ const fs = require('fs');
 const chalk = require('chalk');
 
 /*
-	* Create By Naze
-	* Follow https://github.com/nazedev
-	* Whatsapp : https://whatsapp.com/channel/0029VaWOkNm7DAWtkvkJBK43
+	* Create By Ramaa
+	* Follow https://github.com/candratrirama-cell
+	
 */
 
 //~~~~~~~~~~~~< GLOBAL SETTINGS >~~~~~~~~~~~~\\
 
 global.owner = ["6282113821188"] // ['628','628'] 2 owner atau lebih
-global.author = 'Nazedev'
-global.botname = 'Hitori Bot'
+global.author = 'Ramaa'
+global.botname = 'RaBot'
 global.packname = 'Bot WhatsApp'
 global.timezone = 'Asia/Jakarta' // Ganti pakai command .settimezone Makasar
 global.locale = 'en' // Ganti pakai command .setlocale
@@ -39,13 +39,13 @@ global.my = {
 }
 
 global.limit = {
-	free: 20,
-	premium: 999,
-	vip: 900
+	free: 10,
+	premium: 2000,
+	vip: 1000
 }
 
 global.money = {
-	free: 10000,
+	free: 1000,
 	premium: 1000000,
 	vip: 10000000
 }
@@ -94,4 +94,5 @@ fs.watchFile(file, () => {
 	console.log(chalk.yellowBright(`[UPDATE] ${__filename}`))
 	delete require.cache[file]
 	require(file)
+
 });
