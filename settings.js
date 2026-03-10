@@ -11,7 +11,7 @@ const chalk = require('chalk');
 
 global.owner = ["62882008519349"] // ['628','628'] 2 owner atau lebih
 global.author = 'Ramaa'
-global.botname = 'RaBot'
+global.botname = 'Hitori'
 global.packname = 'Bot WhatsApp'
 global.timezone = 'Asia/Jakarta' // Ganti pakai command .settimezone Makasar
 global.locale = 'en' // Ganti pakai command .setlocale
@@ -96,4 +96,5 @@ fs.watchFile(file, () => {
 	require(file)
 
 });
+
 
