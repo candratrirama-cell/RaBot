@@ -45,9 +45,9 @@ global.limit = {
 }
 
 global.money = {
-	free: 1000,
-	premium: 1000000,
-	vip: 10000000
+	free: 10,
+	premium: 100,
+	vip: 1000
 }
 
 global.mess = {
